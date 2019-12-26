@@ -1,0 +1,2 @@
+rm -rf main.o
+ar crv libmysqlhelper.a *.o

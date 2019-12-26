@@ -1,0 +1,17 @@
+编译方法:
+./build.sh 		:编译debug版本
+./build-release.sh 	:编译release版本
+
+
+使用方法:
+1. 需要先安装libmysqlclient
+2. 需要包含以下头文件
+MySqlHelper.h
+SQLBase.h
+SQLConnection.h
+SQLException.h
+SQLField.h
+SQLResult.h
+SQLTypes.h
+SQLValue.h
+3. 链接libmysqlhelper.a库
