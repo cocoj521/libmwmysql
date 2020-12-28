@@ -13,7 +13,7 @@ MYSQL_SQLCONNECTION_NSAMESPACE::CSQLConnection::~CSQLConnection()
 
 bool MYSQL_SQLCONNECTION_NSAMESPACE::CSQLConnection::Open(const char* szHost, const char* szDatabase,
                           const char* szUser, const char* szPassword, unsigned int nPort, 
-                          unsigned int nTimeOut, bool bUseUtf8, const char* szConnAttr)
+						  unsigned int nTimeOut, bool bUseUtf8, const char* szConnAttr, bool bGbkType)
 {
     bool bRet = true;
     Close();
@@ -54,7 +54,14 @@ bool MYSQL_SQLCONNECTION_NSAMESPACE::CSQLConnection::Open(const char* szHost, co
             }
             else
             {
-              mysql_query(m_hConnect, "set names 'gbk'");
+				if (bGbkType)
+				{
+					mysql_query(m_hConnect, "set names 'gb18030'");
+				}
+				else
+				{
+					mysql_query(m_hConnect, "set names 'gbk'");
+				}
             }
 			
 			if (NULL != szConnAttr && '\0' != szConnAttr[0])

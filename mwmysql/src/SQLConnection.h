@@ -18,7 +18,7 @@ public:
             unsigned int nPort = 3306,
             unsigned int nTimeOut=60,
             bool bUseUtf8=false,
-            const char* szConnAttr="");
+			const char* szConnAttr = "", bool bGbkType=false);
 
     void Close();
 

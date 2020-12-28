@@ -14,4 +14,4 @@ SQLField.h
 SQLResult.h
 SQLTypes.h
 SQLValue.h
-3. Á´½Ólibmysqlhelper.a¿â
+3. Á´½Ólibmwmysql.a¿â
